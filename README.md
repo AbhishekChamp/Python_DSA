@@ -1,5 +1,7 @@
 ## "Data Structures and Algorithms from Zero to Hero and Crack Top Companies 100+ Interview questions (Python Coding)" course from Udemy
 
+I used this course to learn about data structures and algorithms in Python
+
 #### Topics Covered In This Course
 
 1. Recursion
