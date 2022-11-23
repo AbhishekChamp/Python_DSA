@@ -56,12 +56,63 @@ class Single_Liked_List:
             while node is not None:
                 print(node.value)
                 node = node.next
+
+    # Search in a single Linked List
+    def searchSLL(self, node_value):
+        if self.head is None:
+            return "The List does not exist"
+        else:
+            node = self.head
+            while node is not None:
+                if node.value == node_value:
+                    return node.value
+                node = node.next
+            return "The value does not exist in the list"
+
+    # Delete a node from Single Linked List
+    def deleteNode(self, location):
+        if self.head is None:
+            print("The Single List does not exist")
+        else:
+            if location == 0:
+                if self.head == self.tail:
+                    self.head = None
+                    self.tail = None
+                else:
+                    self.head = self.head.next
+            else:
+                tempnode = self.head
+                index = 0
+                try:
+                    while index < location - 1:
+                        tempnode = tempnode.next
+                        index += 1
+                    if tempnode.next == self.tail:
+                        print(True)
+                        tempnode.next = None
+                        self.tail = tempnode
+                    else:
+                        next_node = tempnode.next
+                        tempnode.next = next_node.next
+                except:
+                    print(f"Index {location} out of list")
+    
+    # Delete Entire Linked List
+    def deleteEntireSLL(self):
+        if self.head is None:
+            print("The Single Linked List does not exist")
+        else:
+            self.head = None
+            self.tail = None
+
     
 
 def show_result():
     print("Single Linked List : ", end="")
     print([node.value for node in single_link_list])
 
+print("Insertion Linked List")
+print("-----------------------------------------")
 single_link_list  = Single_Liked_List()
 # Insert value at position 2 -> Will cause error
 single_link_list.insertSLL(3, 2)
@@ -86,5 +137,27 @@ single_link_list.insertSLL(32, 2)
 show_result()
 # Insert value at position -1  -> Will cause error
 single_link_list.insertSLL(50, -1)
+# Traverse Linked List
+print("-----------------------------------------")
 print("Traverse Linked List")
 single_link_list.traverseSLL()
+# Search Linked List
+print("-----------------------------------------")
+print("Search Linked List")
+print(single_link_list.searchSLL(30))
+# Deleting Single Linked List
+print("-----------------------------------------")
+print("Deleting Linked List")
+single_link_list.deleteNode(4)
+show_result()
+single_link_list.deleteNode(0)
+show_result()
+single_link_list.deleteNode(1)
+show_result()
+single_link_list.deleteNode(4)
+show_result()
+print("-----------------------------------------")
+print("Deleting Entire Linked List")
+single_link_list.deleteEntireSLL()
+show_result()
+single_link_list.deleteEntireSLL()

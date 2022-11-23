@@ -48,6 +48,7 @@ class Single_Liked_List:
                         print(f"Position {location} is out of range in linked list of size {index}")
 
 def show_result():
+    print("Single Linked List : ", end="")
     print([node.value for node in single_link_list])
 
 single_link_list  = Single_Liked_List()

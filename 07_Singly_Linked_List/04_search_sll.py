@@ -56,6 +56,19 @@ class Single_Liked_List:
             while node is not None:
                 print(node.value)
                 node = node.next
+
+    # Search in a single Linked List
+    def searchSLL(self, node_value):
+        if self.head is None:
+            return "The List does not exist"
+        else:
+            node = self.head
+            while node is not None:
+                if node.value == node_value:
+                    return node.value
+                node = node.next
+            return "The value does not exist in the list"
+
     
 
 def show_result():
@@ -86,5 +99,11 @@ single_link_list.insertSLL(32, 2)
 show_result()
 # Insert value at position -1  -> Will cause error
 single_link_list.insertSLL(50, -1)
+# Traverse Linked List
+print()
 print("Traverse Linked List")
 single_link_list.traverseSLL()
+# Search Linked List
+print()
+print("Search Linked List")
+print(single_link_list.searchSLL(30))
