@@ -67,7 +67,35 @@ class Circular_Singly_Linked_List:
                     else:
                         print(f"Position {location} is out of range in circular linked list of size {index}")
 
+    # Traversal of a node in circular singly linked list
+    def traversal_circular_singly_linked_list(self):
+        if self.head is None:
+            print("There is not any element for traversal")
+        else:
+            temp_node = self.head
+            while temp_node:
+                print(temp_node.value)
+                temp_node = temp_node.next
+                if temp_node == self.tail.next:
+                    break
+
+    # Searching for a node in circular singly linked list
+    def search_circular_singly_linked_list(self, node_value):
+        if self.head is None:
+            print("Cannot search in empty circular singly linked list")
+            return "Cannot search in empty circular singly linked list"
+        else:
+            temp_node = self.head
+            while temp_node:
+                if temp_node.value == node_value:
+                    return temp_node.next
+                temp_node = temp_node.next
+                if temp_node == self.tail.next:
+                    print(f"The node value {node_value} does not exist in this circular singly linked list")
+                    return "The node does not exist in this circular singly linked list"
+
 circular_singly_linked_list = Circular_Singly_Linked_List()
+circular_singly_linked_list.search_circular_singly_linked_list(2)
 circular_singly_linked_list.create_circular_singly_linked_list(1)
 circular_singly_linked_list.insert_circular_singly_linked_list(2, 0)
 circular_singly_linked_list.insert_circular_singly_linked_list(3, -4)
@@ -75,5 +103,9 @@ circular_singly_linked_list.insert_circular_singly_linked_list(6, 6)
 circular_singly_linked_list.insert_circular_singly_linked_list(3, 2)
 circular_singly_linked_list.insert_circular_singly_linked_list(5, 1)
 circular_singly_linked_list.create_circular_singly_linked_list(4)
+circular_singly_linked_list.traversal_circular_singly_linked_list()
+circular_singly_linked_list.search_circular_singly_linked_list(5)
+circular_singly_linked_list.search_circular_singly_linked_list(4)
+
 
 print([node.value for node in circular_singly_linked_list])

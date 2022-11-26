@@ -88,7 +88,6 @@ class Single_Liked_List:
                         tempnode = tempnode.next
                         index += 1
                     if tempnode.next == self.tail:
-                        print(True)
                         tempnode.next = None
                         self.tail = tempnode
                     else:

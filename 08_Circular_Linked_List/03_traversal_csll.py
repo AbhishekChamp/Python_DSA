@@ -67,6 +67,18 @@ class Circular_Singly_Linked_List:
                     else:
                         print(f"Position {location} is out of range in circular linked list of size {index}")
 
+    # Traversal of a node in circular singly linked list
+    def traversal_circular_singly_linked_list(self):
+        if self.head is None:
+            print("There is not any element for traversal")
+        else:
+            temp_node = self.head
+            while temp_node:
+                print(temp_node.value)
+                temp_node = temp_node.next
+                if temp_node == self.tail.next:
+                    break
+
 circular_singly_linked_list = Circular_Singly_Linked_List()
 circular_singly_linked_list.create_circular_singly_linked_list(1)
 circular_singly_linked_list.insert_circular_singly_linked_list(2, 0)
@@ -75,5 +87,7 @@ circular_singly_linked_list.insert_circular_singly_linked_list(6, 6)
 circular_singly_linked_list.insert_circular_singly_linked_list(3, 2)
 circular_singly_linked_list.insert_circular_singly_linked_list(5, 1)
 circular_singly_linked_list.create_circular_singly_linked_list(4)
+circular_singly_linked_list.traversal_circular_singly_linked_list()
+
 
 print([node.value for node in circular_singly_linked_list])
